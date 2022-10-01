@@ -13,4 +13,11 @@
     <string name="menu_absents">Absents</string>
     <string name="menu_guest_form">Add New Guest</string>
 
+    <string name="name">Name</string>
+    <string name="presence">Presence</string>
+    <string name="present">Present</string>
+    <string name="absent">Absent</string>
+    <string name="save">Save</string>
+    <string name="guest_name_hint">Enter guest name here</string>
+
 </resources>
