@@ -1,4 +1,4 @@
-package me.jhones.guests.ui
+package me.jhones.guests.views
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import me.jhones.guests.databinding.FragmentPresentsBinding
+import me.jhones.guests.databinding.FragmentAbsentsBinding
+import me.jhones.guests.viewmodels.AbsentsViewModel
 
-class PresentsFragment : Fragment() {
+class AbsentsFragment : Fragment() {
 
-    private var _binding: FragmentPresentsBinding? = null
+    private var _binding: FragmentAbsentsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +23,14 @@ class PresentsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val presentsViewModel =
-            ViewModelProvider(this).get(PresentsViewModel::class.java)
+        val absentsViewModel =
+            ViewModelProvider(this).get(AbsentsViewModel::class.java)
 
-        _binding = FragmentPresentsBinding.inflate(inflater, container, false)
+        _binding = FragmentAbsentsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textGallery
-        presentsViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textSlideshow
+        absentsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

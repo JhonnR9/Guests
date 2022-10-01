@@ -1,4 +1,4 @@
-package me.jhones.guests.ui
+package me.jhones.guests.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

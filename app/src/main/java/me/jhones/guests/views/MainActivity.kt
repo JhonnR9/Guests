@@ -1,11 +1,9 @@
-package me.jhones.guests
+package me.jhones.guests.views
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -14,6 +12,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import me.jhones.guests.R
 import me.jhones.guests.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -59,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_all_guests, R.id.nav_presents, R.id.nav_absents,R.id.nav_guests_form
+                R.id.nav_all_guests, R.id.nav_presents, R.id.nav_absents, R.id.nav_guests_form
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
