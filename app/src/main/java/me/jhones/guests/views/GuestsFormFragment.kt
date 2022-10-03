@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import me.jhones.guests.models.GuestModel
 import me.jhones.guests.databinding.FragmentGuestFormBinding
 import me.jhones.guests.viewmodels.GuestsFormViewModel
 
@@ -24,7 +24,10 @@ class GuestsFormFragment : Fragment() {
         val guestsFormViewModel = ViewModelProvider(this)[GuestsFormViewModel::class.java]
 
         binding.buttonSave.setOnClickListener{
-           Toast.makeText(activity?.applicationContext,"test",Toast.LENGTH_SHORT).show()
+            val name = binding.editName.text.toString()
+            val presence = binding.radioPresent.isChecked
+            val guest = GuestModel (0, name,presence)
+            guestsFormViewModel.insert(guest)
         }
         binding.radioPresent.isChecked = true
 
