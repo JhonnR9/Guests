@@ -19,5 +19,6 @@
     <string name="absent">Absent</string>
     <string name="save">Save</string>
     <string name="guest_name_hint">Enter guest name here</string>
+    <string name="remove">remove</string>
 
 </resources>
