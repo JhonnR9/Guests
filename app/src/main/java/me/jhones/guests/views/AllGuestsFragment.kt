@@ -1,5 +1,6 @@
 package me.jhones.guests.views
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +8,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import me.jhones.guests.R
+import me.jhones.guests.constants.DataBaseConstants
 import me.jhones.guests.databinding.FragmentAllGuestsBinding
 import me.jhones.guests.viewmodels.AllGuestsViewModel
 import me.jhones.guests.views.adapters.GuestsAdapter
@@ -37,11 +43,16 @@ class AllGuestsFragment : Fragment() {
             adapter = guestsAdapter
         }
 
-        val listener = object : OnGuestListener(){
+        val listener = object : OnGuestListener() {
 
             override fun onclick(id: Int) {
-                Toast.makeText(context, "Test on Click", Toast.LENGTH_SHORT).show()
+                val args: Bundle = Bundle()
+                args.putInt(DataBaseConstants.GUEST.ID_KEY, id)
+                Navigation.createNavigateOnClickListener(R.id.action_nav_all_guests_to_nav_guests_form, args)
+                //findNavController().navigate(R.id.action_nav_all_guests_to_nav_guests_form)
+
             }
+
 
             override fun onDelete(id: Int) {
                 allGuestsViewModel.deleteGuest(id)
@@ -52,7 +63,7 @@ class AllGuestsFragment : Fragment() {
 
         guestsAdapter.attachListener(listener)
 
-       allGuestsViewModel.getGuests()
+        allGuestsViewModel.getGuests()
 
         observe()
 

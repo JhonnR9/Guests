@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Guests</string>
+    <string name="app_name"> Guests</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Guests</string>
@@ -17,8 +17,15 @@
     <string name="presence">Presence</string>
     <string name="present">Present</string>
     <string name="absent">Absent</string>
+
     <string name="save">Save</string>
     <string name="guest_name_hint">Enter guest name here</string>
-    <string name="remove">remove</string>
+    <string name="remove">REMOVE</string>
+
+    <string name="delete_alert_title">Remove Guest</string>
+    <string name="delete_alert_message">Are you sure you want to remove this guest?</string>
+    <string name="delete_alert_yes">Yes</string>
+    <string name="delete_alert_no">No</string>
+    <string name="delete_alert_success">Successfully removed</string>
 
 </resources>
